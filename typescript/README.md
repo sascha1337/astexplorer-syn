@@ -1,9 +1,9 @@
-# astexplorer-syn
+# azle-syn
 
-This is a wrapper for [`syn`](https://github.com/dtolnay/syn) that provides a JavaScript interface to the Rust parser compiled to WASM with:
+Originally forked from https://github.com/RReverser/astexplorer-syn.
 
-```shell
+```bash
 wasm-pack build --target web
 ```
 
-It's not intended for general usage, but only as a wrapper for ASTExplorer.
+Take the azle_syn_bg.wasm.d.ts and azle_syn_bg.wasm.d.ts files and copy them into the typescript directory. azle_syn.js is modified from the original wasm-pack ouptut to work with Azle.
