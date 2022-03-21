@@ -6,4 +6,4 @@ Originally forked from https://github.com/RReverser/astexplorer-syn.
 wasm-pack build --target web
 ```
 
-Take the azle_syn_bg.wasm.d.ts and azle_syn_bg.wasm.d.ts files and copy them into the typescript directory. azle_syn.js is modified from the original wasm-pack ouptut to work with Azle.
+Take the azle_syn_bg.wasm, azle_syn_bg.wasm.d.ts, and azle_syn.d.ts files and copy them into the typescript directory. azle_syn.js is modified from the original wasm-pack ouptut to work with Azle and should not be modified.

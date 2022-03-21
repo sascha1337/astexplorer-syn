@@ -168,9 +168,6 @@ async function load(module, imports) {
 }
 
 async function init(input) {
-    // if (typeof input === 'undefined') {
-    //     input = import.meta.url.replace(/\.js$/, '_bg.wasm');
-    // }
     const imports = {};
     imports.wbg = {};
     imports.wbg.__wbg_new_52323fa0a5226409 = function() {

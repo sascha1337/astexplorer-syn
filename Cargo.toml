@@ -1,5 +1,5 @@
 [package]
-name = "astexplorer-syn"
+name = "azle-syn"
 version = "1.0.57"
 authors = ["Ingvar Stepanyan <me@rreverser.com>"]
 edition = "2018"

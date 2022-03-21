@@ -3,7 +3,13 @@
 version = 3
 
 [[package]]
-name = "astexplorer-syn"
+name = "autocfg"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+
+[[package]]
+name = "azle-syn"
 version = "1.0.57"
 dependencies = [
  "proc-macro2",
@@ -14,12 +20,6 @@ dependencies = [
  "syn-serde",
  "wasm-bindgen",
 ]
-
-[[package]]
-name = "autocfg"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
 
 [[package]]
 name = "bumpalo"
