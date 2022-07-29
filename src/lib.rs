@@ -1,5 +1,6 @@
 use syn::spanned::Spanned;
 use wasm_bindgen::prelude::*;
+use syn::export::ToTokens;
 
 #[wasm_bindgen]
 extern "C" {
@@ -335,7 +336,7 @@ impl ToJS for syn::Error {
 #[wasm_bindgen(js_name = "parseFile")]
 pub fn parse_file(rust: &str) -> Result<JsValue, JsValue> {
     match syn::parse_file(rust) {
-        Ok(ast) => Ok(ast.to_js()),
+        Ok(ast) => Ok(syn_serde::json::to_string(&ast).to_js()),
         Err(err) => Err(err.to_js()),
     }
 }
@@ -345,5 +346,15 @@ pub fn parse_derive_input(rust: &str) -> Result<JsValue, JsValue> {
     match syn::parse_str::<syn::DeriveInput>(rust) {
         Ok(ast) => Ok(ast.to_js()),
         Err(err) => Err(err.to_js()),
+    }
+}
+
+#[wasm_bindgen(js_name = "printAst")]
+pub fn print_ast(ast: &str) -> Result<JsValue, JsValue> {
+    let file_result: Result<syn::File, _> = syn_serde::json::from_str(ast);
+    
+    match file_result {
+        Ok(file) => Ok(file.into_token_stream().to_string().to_js()),
+        Err(err) => Err(err.to_string().to_js())
     }
 }
